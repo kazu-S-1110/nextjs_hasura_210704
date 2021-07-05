@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { ReactNode, VFC } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface Props {
   children: ReactNode
@@ -72,6 +73,20 @@ export const Layout: VFC<Props> = ({
           </div>
         </nav>
       </header>
+      <main className="flex flex-1 flex-col justify-center items-center w-screen">
+        {children}
+      </main>
+      <footer className="w-full h-12 flex justify-center items-center border-t">
+        <a
+          href="#"
+          className="flex items-center"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Powered by{' '}
+          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+        </a>
+      </footer>
     </div>
   )
 }

@@ -22,7 +22,7 @@ const createApolloClient = () => {
   })
 }
 
-const initializeApollo = (initialState = null) => {
+export const initializeApollo = (initialState = null) => {
   //左辺の式がapolloClientがnull,undefinedなら右辺が実行される式。
   const _apolloClient = apolloClient ?? createApolloClient()
   // For SSG and SSR always create a new Apollo Client

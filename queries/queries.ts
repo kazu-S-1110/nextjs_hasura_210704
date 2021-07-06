@@ -3,7 +3,7 @@ import { gql } from '@apollo/client'
 export const GET_USERS = gql`
   #graphql
   query GetUsers {
-    users(order_by: { created_at: desc }) {
+    users(order_by: { name: desc }) {
       id
       name
       created_at

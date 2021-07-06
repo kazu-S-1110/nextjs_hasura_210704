@@ -6,9 +6,7 @@ import { GetUsersQuery } from '../types/generated/graphql';
 import { Layout } from '../components/Layout';
 
 const FetchSub: VFC = () => {
-  const { data } = useQuery<GetUsersQuery>(GET_USERS, {
-    fetchPolicy: "cache-only"
-  });
+  const { data } = useQuery<GetUsersQuery>(GET_USERS_LOCAL);
   console.log(data);
   return (
     <Layout title="Hasura fetchPolicy read cache">

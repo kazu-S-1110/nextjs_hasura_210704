@@ -6,9 +6,7 @@ import { GetUsersQuery } from '../types/generated/graphql';
 import { Layout } from '../components/Layout';
 
 const FetchMain: VFC = () => {
-  const { data, error } = useQuery<GetUsersQuery>(GET_USERS, {
-    fetchPolicy: "network-only"
-  });
+  const { data, error } = useQuery<GetUsersQuery>(GET_USERS);
   if (error)
     return (
       <Layout title="Hasura fetchPolicy">

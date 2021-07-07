@@ -14,7 +14,8 @@ export const GET_USERS = gql`
 export const GET_USERS_LOCAL = gql`
   #graphql
   query GetUsers {
-    users(order_by: { created_at: desc }) @client {
+    # users(order_by: { created_at: desc }) @client {　//サーバから取得するクエリと同じにしないとだめ！
+    users(order_by: { name: desc }) @client {
       id
       name
       created_at

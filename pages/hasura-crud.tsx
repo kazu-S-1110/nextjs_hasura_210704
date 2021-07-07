@@ -87,6 +87,7 @@ const HasuraCRUD: VFC = () => {
         className="flex flex-col justify-center items-center"
         onSubmit={handleSubmit}
       >
+        {/* タイピングされる度にレンダリングされるので無駄。子コンポーネントにmemoを使用してパフォーマンスをあげる */}
         <input
           type="text"
           placeholder="New User ?"

@@ -32,6 +32,19 @@ const HasuraCRUD: VFC = () => {
       })
     },
   })
+  const [delete_users_by_pk] = useMutation<DeleteUserMutation>(DELETE_USER, {
+    update(cache, { data: { delete_users_by_pk } }) {
+      cache.modify({
+        fields: {
+          users(existingUsers, { readField }) {
+            return existingUsers.filter(
+              (user) => delete_users_by_pk !== readField('id', user)
+            )
+          },
+        },
+      })
+    },
+  })
 
   return (
     <Layout title="Hasura CRUD">

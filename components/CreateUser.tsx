@@ -1,5 +1,6 @@
 import { VFC } from 'react'
 import { useCreateForm } from '../hooks/useCreateForm'
+import { Child } from './Child'
 
 export const CreateUser: VFC = () => {
   //CustomHookから変数を取り出す。
@@ -23,27 +24,28 @@ export const CreateUser: VFC = () => {
           value={text}
           onChange={handleTextChange}
         />
-        <form
-          className="flex flex-col justify-center items-center"
-          onSubmit={handleSubmit}
-        >
-          <label>Username</label>
-          <input
-            type="text"
-            placeholder="New user ?"
-            className="mb-3 px-3 py-2 border border-gray-300"
-            value={username}
-            onChange={usernameChange}
-          />
-          <button
-            type="submit"
-            className="my-3 py-1 px-3 text-white bg-indigo-600 hover:bg-indigo-700 rounded-2xl 
-          focus:outline-none"
-          >
-            Submit
-          </button>
-        </form>
       </div>
+      <form
+        className="flex flex-col justify-center items-center"
+        onSubmit={handleSubmit}
+      >
+        <label>Username</label>
+        <input
+          type="text"
+          placeholder="New user ?"
+          className="mb-3 px-3 py-2 border border-gray-300"
+          value={username}
+          onChange={usernameChange}
+        />
+        <button
+          type="submit"
+          className="my-3 py-1 px-3 text-white bg-indigo-600 hover:bg-indigo-700 rounded-2xl 
+          focus:outline-none"
+        >
+          Submit
+        </button>
+      </form>
+      <Child printMsg={printMsg} />
     </>
   )
 }

@@ -26,5 +26,19 @@ describe('UserDetail Test Cases', () => {
     })
     render(page)
     expect(await screen.findByText('User detail')).toBeInTheDocument()
+    expect(screen.getByText('Test user A')).toBeInTheDocument()
+    expect(
+      screen.getByText('2021-01-13T18:06:46.412969+00:00')
+    ).toBeInTheDocument()
+    userEvent.click(screen.getByTestId('back-to-main'))
+    expect(await screen.findByText('SSG + ISR')).toBeInTheDocument()
+    userEvent.click(
+      screen.getByTestId('link-2b07950f-9959-1bc7-834d-5656e4aeaac2')
+    )
+    expect(await screen.findByText('User detail')).toBeInTheDocument()
+    expect(screen.getByText('Test user B')).toBeInTheDocument()
+    expect(
+      screen.getByText('2021-02-13T18:06:46.412969+00:00')
+    ).toBeInTheDocument()
   })
 })

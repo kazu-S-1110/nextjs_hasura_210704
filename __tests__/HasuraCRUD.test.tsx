@@ -4,6 +4,8 @@ import { getPage, initTestHelpers } from 'next-page-tester'
 import { setupServer } from 'msw/node'
 import { handlers } from '../mock/handlers'
 
+process.env.NEXT_PUBLIC_HASURA_URL =
+  'https://basic-lesson210703.hasura.app/v1/graphql'
 initTestHelpers()
 
 const server = setupServer(...handlers)
